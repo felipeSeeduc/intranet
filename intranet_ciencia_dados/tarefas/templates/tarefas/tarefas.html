@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+{% block content %}
+{% load static%}
+<header>
+<h1>Tarefas Ciência de Dados - 2023</h1>
+<p> Total de tarefas: {{tarefas|length}}</p>
+</header>
+<nav>
+<select name="status" id="status">
+{% for tarefa in tarefas_unique_status %}
+<option value="{{tarefa.0}}"> {{tarefa.1}}</option>
+{% endfor %}
+</select>
+</nav>
+
+<div class="tarefas">
+
+{% for tarefa in tarefas %}
+    <div class="tarefa" status="{{tarefa.status}}">
+    <h1> {{tarefa.id}}. {{tarefa.name}}
+    {% comment %} <a href="{%url 'tarefas/tarefa/1'%}">Detalhes</a> {% endcomment %}
+    </h1>
+    <p>{{tarefa.description}}</p>
+    <p>Status: {{tarefa.get_status_display}}</p>
+    </div>
+{% endfor %}
+</div>
+
+<script src="{% static 'tarefas/js/tarefas.js' %}"></script>
+{% endblock content %}

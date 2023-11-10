@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block content %} 
+<header>
+<h1>Relatorios Ciência de Dados - 2023</h1>
+<p> Total de relatorios: {{relatorios|length}}</p>
+</header>
+<div class="relatorios">
+{% for relatorio in relatorios %}
+    <div class="relatorio">
+
+    <h1> {{relatorio.id}}. {{relatorio.name}}
+    {% comment %} <a href="{%url 'relatorios/relatorio/1'%}">Detalhes</a> {% endcomment %}
+    </h1>
+    <p>{{relatorio.description}}</p>
+    {{relatorio.iframe|safe}}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock content %}

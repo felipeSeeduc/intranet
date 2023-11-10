@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(18, 18, 230);
+}
+
+header h1{
+    background-color: blue;
+    color: antiquewhite;
+    padding: 20px 10px;
+}
+
+header p{
+    text-align: center;
+}
+
+.relatorios{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.relatorio {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.relatorio iframe{
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+    align-self: center;
+    border-radius: 10px;
+}

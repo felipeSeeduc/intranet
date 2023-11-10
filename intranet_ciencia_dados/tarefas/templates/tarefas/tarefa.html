@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h1>Relatorio</h1>
+   <h1>{{relatorio.id}}. {{relatorio.name}}</h1>
+    <p>{{relatorio.description}}</p>
+    {{relatorio.iframe|safe}}
+
+{% endblock content %}
+
+
+{% comment %} https://docs.djangoproject.com/en/dev/ref/templates/builtins/ {% endcomment %}
