@@ -1,12 +1,8 @@
-{% extends "master.html" %}
+{% extends "tarefas_master.html" %}
 
 {% block content %}
-<h1>Relatorio</h1>
-   <h1>{{relatorio.id}}. {{relatorio.name}}</h1>
-    <p>{{relatorio.description}}</p>
-    {{relatorio.iframe|safe}}
+<h1 class="tarefas_h1">Tarefa {{tarefa.name}}<span class="tarefa_status">{{tarefa.get_status_display}}</span> </h1>     
+    <h2>Log</h2>
+        <p>{{tarefa.log|linebreaksbr}}</p>
 
 {% endblock content %}
-
-
-{% comment %} https://docs.djangoproject.com/en/dev/ref/templates/builtins/ {% endcomment %}

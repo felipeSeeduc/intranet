@@ -13,6 +13,7 @@ class Tarefa(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=20,choices=STATUS_LIST, default="idle")
+    log = models.TextField(default="")
     
     def __repr__(self) -> str:
         return f'Name: {self.name}'

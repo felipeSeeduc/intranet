@@ -1,11 +1,24 @@
-body{
-    background-color: rgb(255, 255, 255);
-    color: rgb(18, 18, 230);
+:root{
+    --border-radius: 5px;
+    --gap: 10px;
+    --accent-color: rgb(2, 100, 119);
+    --text-color: rgb(18, 18, 230);
+    --text-color-alt: antiquewhite;
 }
 
-header h1{
-    background-color: blue;
-    color: antiquewhite;
+body{
+    background-color: rgb(255, 255, 255);
+    color: var(--text-color);
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+.tarefas_h1 {
+    background-color: rgb(2, 100, 119);
+    color: var(--text-color-alt);
     padding: 20px 10px;
 }
 
@@ -13,24 +26,53 @@ header p{
     text-align: center;
 }
 
-.relatorios{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+.total_tarefas {
+    color:var(--text-color-alt);
+    font-size: 20px;
+    font-family:serif;
+    background-color: red;
 }
 
-.relatorio {
-    border: 2px solid black;
+#status {
+    color: var(--text-color-alt);
+    font-size: medium;
     padding: 10px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
 }
-.relatorio iframe{
+
+.tarefas {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: var(--gap);
+}
+.tarefa{
+    background: var(--accent-color);
+    color: var(--text-color-alt);
+    padding: 10px;
     border: 1px solid black;
-    box-shadow: 2px 2px black;
-    align-self: center;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+}
+
+.tarefa a, .tarefa a:link, .tarefa a:visited{
+    padding: 2px;
+    text-decoration: none;
+    background-color: var(--text-color-alt);
+    color: black;
+    font-weight: 900;
+}
+
+.tarefa_status {
+    color: var(--text-color-alt);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    font-size: 20px;
+    font-family:serif;
+    background-color: red;
+    width: fit-content;
+}
+
+.tarefa__detalhes{
+    font-size: 22px;
 }

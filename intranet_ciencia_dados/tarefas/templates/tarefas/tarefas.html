@@ -1,15 +1,17 @@
-{% extends "master.html" %}
+{% extends "tarefas_master.html" %}
+{% load static%}
 
 {% block content %}
-{% load static%}
 <header>
-<h1>Tarefas Ciência de Dados - 2023</h1>
-<p> Total de tarefas: {{tarefas|length}}</p>
+<h1 class="tarefas_h1">Tarefas Ciência de Dados - 2023</h1>
+<p class="total_tarefas"> Total de tarefas: {{tarefas|length}}</p>
 </header>
 <nav>
 <select name="status" id="status">
 {% for tarefa in tarefas_unique_status %}
-<option value="{{tarefa.0}}"> {{tarefa.1}}</option>
+<div class="status__option">
+    <option value="{{tarefa.0}}"> {{tarefa.1}}</option>
+</div>
 {% endfor %}
 </select>
 </nav>
@@ -18,11 +20,10 @@
 
 {% for tarefa in tarefas %}
     <div class="tarefa" status="{{tarefa.status}}">
-    <h1> {{tarefa.id}}. {{tarefa.name}}
-    {% comment %} <a href="{%url 'tarefas/tarefa/1'%}">Detalhes</a> {% endcomment %}
-    </h1>
-    <p>{{tarefa.description}}</p>
-    <p>Status: {{tarefa.get_status_display}}</p>
+    <h1> {{tarefa.name}} <span class="tarefa_status">{{tarefa.get_status_display}}</span></h1>
+    <a href="{% url 'tarefa' tarefa.id%}">Detalhes</a>
+    <h2>Descrição</h2>
+    <p class="tarefa__detalhes">{{tarefa.description}}</p>
     </div>
 {% endfor %}
 </div>
